@@ -1,0 +1,40 @@
+<html>
+<body>
+    <!-- Container for the login form -->
+    <div class="login">
+        <!-- Header for the form -->
+        <h1>FWI Prediction</h1>
+   
+        <!-- Form for submitting data to the server for prediction -->
+        <!-- The form uses the POST method and sends data to the 'predict_datapoint' route -->
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <!-- Input field for Temperature, required to be filled -->
+            <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
+            <!-- Input field for Relative Humidity (RH), required to be filled -->
+            <input type="text" name="RH" placeholder="RH" required="required" /><br>
+            <!-- Input field for Wind Speed (Ws), required to be filled -->
+            <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
+            <!-- Input field for Rain, required to be filled -->
+            <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
+            <!-- Input field for Fine Fuel Moisture Code (FFMC), required to be filled -->
+            <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
+            <!-- Input field for Duff Moisture Code (DMC), required to be filled -->
+            <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
+            <!-- Input field for Initial Spread Index (ISI), required to be filled -->
+            <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
+            <!-- Input field for Classes, required to be filled -->
+            <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
+            <!-- Input field for Region, required to be filled -->
+            <input type="text" name="Region" placeholder="Region" required="required" /><br>
+   
+            <!-- Submit button for the form -->
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+        
+        <!-- Section to display the prediction result -->
+        <h2>
+            THE FWI prediction is {{result}}  <!-- Updated variable name back to 'result' for consistency -->
+        </h2>
+    </div>
+</body>
+</html>
